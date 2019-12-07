@@ -49,7 +49,7 @@ ggplot(data = df_selected) +
 ```
 
 #### **Discussion**
-The time series data can teach a lot of things. It offers insights as to where crimes are most prevalent to what type of crimes occur where and the most that a certain crime is committed. The direct stakeholders would be perpetrators who commit the offense, law enforcement and victims of the crime. The indirect stakeholders would be policymakers, public interest groups and neighborhood watch groups. The time series data from BPD can be used to see patterns and frequencies of a crime. This could not only aid the BPD, but other police departments fight crime and prevent them from happening. In conclusion, the large data set provides excellent insights to predict behavior and stop crime from further happening.
+The time series data can teach a lot of things. It offers insights as to where crimes are most prevalent, what type of crimes occur and where they happen. The direct stakeholders would be perpetrators who commit the offense, law enforcement and victims of the crime. The indirect stakeholders would be policymakers, public interest groups and neighborhood watch groups. The time series data from BPD can be used to see patterns and frequencies of a crime. This could not only aid the BPD, but other police departments fight crime and prevent them from happening. In conclusion, the large data set provides excellent insights to predict behavior and stop crime from further happening.
 
 
 ```{r echo = FALSE, include = TRUE, message = FALSE}
