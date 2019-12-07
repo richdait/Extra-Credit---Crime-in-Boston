@@ -8,7 +8,7 @@ output: html_document
 
 ```{r setup, echo=TRUE, eval=TRUE, include=FALSE}
 
-knitr::opts_chunk$set(echo = TRUE, message = TRUE)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
 
 options(repos=structure(c(CRAN="https://github.com/richuwm3git/extra_credit")))
 
@@ -32,6 +32,10 @@ The time series data set is provided by the Boston Police Department (BPD). It c
 
 ```{r echo = FALSE, include = TRUE}
 
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+
+options(repos=structure(c(CRAN="https://github.com/richuwm3git/Extra-Credit---Crime-in-Boston")))
+
 # Source these R files
 source("crime_exc.R")
 
@@ -46,6 +50,36 @@ ggplot(data = df_selected) +
 
 #### **Discussion**
 The time series data can teach a lot of things. It offers insights as to where crimes are most prevalent to what type of crimes occur where and the most that a certain crime is committed. The direct stakeholders would be perpetrators who commit the offense, law enforcement and victims of the crime. The indirect stakeholders would be policymakers, public interest groups and neighborhood watch groups. The time series data from BPD can be used to see patterns and frequencies of a crime. This could not only aid the BPD, but other police departments fight crime and prevent them from happening. In conclusion, the large data set provides excellent insights to predict behavior and stop crime from further happening.
+
+
+```{r echo = FALSE, include = TRUE, message = FALSE}
+
+knitr::opts_chunk$set(echo = TRUE, message = TRUE, warning = FALSE)
+
+options(repos=structure(c(CRAN="https://github.com/richuwm3git/Extra-Credit---Crime-in-Boston")))
+
+# Source these R files
+source("crime_exc.R")
+
+
+# Create the background of map tiles
+base_plot <- qmplot(
+  data = df_selected,           # Name of the data frame
+  x = Long,                     # Data feature for longitude
+  y = Lat,                      # Data feature for latitude
+  geom = "blank",               # Don't display data points (yet)
+  maptype = "toner-background", # Map tiles to query
+  darken = .1,                  # Darken the map tiles just a little bit
+  legend = "topleft"             # Location of legend on page
+)
+
+# Add the locations (Long, Lat) of where arson occurred on the map
+base_plot +
+  geom_point(mapping = aes(x = Long, y = Lat), color = "brown", alpha = .9) +
+  labs(title = "Arson in Boston from 2015 - 2018") +
+  theme(plot.margin = margin(.3, 0, 0, 0, "cm"), plot.title = element_text(hjust = 0.5))
+
+```
 
 #### **Reflection**
 I learned that time series data can provide valuable insights; especially, on crime and other social problems. I also learned how to create a map using a time series data. One question I have is, "how many crimes have been prevented due to time series data?"
