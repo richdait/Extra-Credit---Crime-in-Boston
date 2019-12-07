@@ -6,7 +6,6 @@ output: html_document
 
 ---
 
-
 ```{r setup, echo=TRUE, eval=TRUE, include=FALSE}
 
 knitr::opts_chunk$set(echo = TRUE, message = TRUE)
@@ -16,9 +15,45 @@ options(repos=structure(c(CRAN="https://github.com/richuwm3git/extra_credit")))
 # Source these R files
 source("crime_exc.R")
 
+# Also load additional libraries that may be needed for output
+library("knitr")
+
+library("dplyr")
+library("shiny")
 
 ```
 
-The aim of this project is to create a report using time series data [Crime in Boston](https://www.kaggle.com/AnalyzeBoston/crimes-in-boston#crime.csv).
+### The aim of this project is to create a report using time series data for [crime in Boston](https://www.kaggle.com/AnalyzeBoston/crimes-in-boston#crime.csv).
 
-#### Working Reports
+
+##### **Introduction**
+The time series data set is provided by the Boston Police Department (BPD). It contains records of incidents such as vandalism, auto theft and arson. Additionally, the report details the year, location in the city of Boston via longitude and latitude and other important information. The reporting began in the middle of June 2015 and goes on until 2018. Data was collected to answer questions such as what types of crimes are most common and the frequency in which they happened.
+
+
+```{r echo = FALSE, include = TRUE}
+
+# Source these R files
+source("crime_exc.R")
+
+# Render a vertical bar chart with the frequency in which arson occurs by day of the week 
+ggplot(data = df_selected) +
+  geom_col(mapping = aes(x = YEAR,
+                  y = OFFENSE_DESCRIPTION, fill = DAY_OF_WEEK), alpha = .8) + 
+  labs(title = "Frequency (Days) in Which Arson Occurred in Boston from 2015 - 2018", 
+       x = "Year", y = "Arson", color = "Urbanity") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+#### **Discussion**
+The time series data can teach a lot of things. It offers insights as to where crimes are most prevalent to what type of crimes occur where and the most that a certain crime is committed. The direct stakeholders would be perpetrators who commit the offense, law enforcement and victims of the crime. The indirect stakeholders would be policymakers, public interest groups and neighborhood watch groups. The time series data from BPD can be used to see patterns and frequencies of a crime. This could not only aid the BPD, but other police departments fight crime and prevent them from happening. In conclusion, the large data set provides excellent insights to predict behavior and stop crime from further happening.
+
+#### **Reflection**
+I learned that time series data can provide valuable insights; especially, on crime and other social problems. I also learned how to create a map using a time series data. One question I have is, "how many crimes have been prevented due to time series data?"
+
+#### **Appendix**
+1. crime.csv
+2. crime_exc.html
+3. crime_exc.R
+4. index.HTML
+5. index.RMD
+6. README.MD
