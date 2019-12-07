@@ -1,0 +1,24 @@
+---
+title: "Extra Credit - Report on Crime in Boston"
+author: "Richard Dait"
+date: "12/06/2019"
+output: html_document
+
+---
+
+
+```{r setup, echo=TRUE, eval=TRUE, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE, message = TRUE)
+
+options(repos=structure(c(CRAN="https://github.com/richuwm3git/extra_credit")))
+
+# Source these R files
+source("crime_exc.R")
+
+
+```
+
+The aim of this project is to create a report using time series data [Crime in Boston](https://www.kaggle.com/AnalyzeBoston/crimes-in-boston#crime.csv).
+
+#### Working Reports
