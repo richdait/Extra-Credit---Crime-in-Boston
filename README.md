@@ -5,8 +5,8 @@ University of Washington, Seattle Campus<br>
 Richard Dait<br>
 Autumn 2019
 
-See [Crime Report](https://richuwm3git.github.io/extra_credit/).
+See [Crime Report](https://richdait.github.io/Extra-Credit---Crime-in-Boston/).
 
 <hr>
 GitHub Repository Name: https://github.com/richuwm3git/extra_credit<br>
-URL: https://richuwm3git.github.io/extra_credit/
+Github Page URL: https://richdait.github.io/Extra-Credit---Crime-in-Boston/
